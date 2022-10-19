@@ -25,10 +25,8 @@ while(yessir == true)
 userinput.ToLower();
 if(userinput == "word" ){
 yessir = false;
-playing = true;
 }else if(userinput == "number" ){
 yessir = false;
-playing = false;
 }else{
 Console.WriteLine($"no \"word\" or \"number\" not this \"{userinput}\" ");
 userinput = Console.ReadLine();
