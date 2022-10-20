@@ -4,7 +4,6 @@
 // it will ask you for a number ir a word and then give that word or number back words
 
 Console.Clear();
-bool playing = true;
 string no;
 int wrong = 0;
 //---
@@ -15,8 +14,10 @@ long WrongI = 0;
 bool wNumber = true;
 
 // idk why wNumber is named this but like i don't know how to change all of them at the same time so i'm not going to
-while (playing)
+bool playing = true;
+while(playing == true)
 {
+playing = true;
 
 bool yessir = true;
 Console.WriteLine($"choose \"word\" or \"number\" ");
@@ -112,11 +113,21 @@ char[] IntInputII = IntInput.ToCharArray();
 
     break;
 }
-    Console.WriteLine("Would you like to play again? yes or no");
-    no = Console.ReadLine();
-    if (no == "no")
-    {
-        playing = false;
-    }
-    wNumber = true;
+    bool Yessir = true;
+Console.WriteLine($"want to play again");
+string responce = Console.ReadLine();
+while(Yessir == true)
+{
+responce.ToLower();
+if(responce == "yes" ){
+Yessir = false;
+playing = true;
+}else if(responce == "no" ){
+Yessir = false;
+playing = false;
+}else{
+Console.WriteLine($"so like i need a yes or no not this \"{responce}\" ");
+responce = Console.ReadLine();
+}
+}
 }
